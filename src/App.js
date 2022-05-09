@@ -3,7 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 import './App.css';
 
-import { Navbar } from './components';
+import { Navbar, Exchanges, Homepage, Cryptocurrencies, CryptoDetails, News } from './components';
 
 const App = () => {
     return (
@@ -12,7 +12,7 @@ const App = () => {
                 <Navbar />
             </div>
             <div className="main">
-            <Layout>
+                <Layout>
                     <div className="routes">
                         <Switch>
                             <Route exact path="/">
@@ -33,10 +33,17 @@ const App = () => {
                         </Switch>
                     </div>
                 </Layout>
-
-            </div>
-            <div className="footer">
-
+                <div className="footer" >
+                    <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>
+                        ISO Coin <br />
+                        All rights reserved
+                    </Typography.Title>
+                    <Space>
+                        <Link to="/">Home</Link>
+                        <Link to="/exchanges">Exchanges</Link>
+                        <Link to="/news">News</Link>
+                    </Space>
+                </div>
             </div>
         </div>
     )
